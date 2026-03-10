@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Upalabdha03/CICD-pipeline-ClassDEMO-'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building application..."
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                bat '''
+                if not exist D:\CICD pipeline mkdir D:\CICD pipeline
+                copy index.html D:\CICD pipeline
+                '''
+            }
+        }
+    }
+}

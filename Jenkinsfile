@@ -24,8 +24,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat '''
-                if not exist D:\CICD pipeline mkdir D:\CICD pipeline
-                copy index.html D:\CICD pipeline
+                if not exist "D:\\CICD pipeline"mkdir "D:\\CICD pipeline"
+                copy index.html "D:\\CICD pipeline"
                 '''
             }
         }
